@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Hot-Yongmin</string>
+    <string name="sopt">SOPT</string>
+    <string name="id">아이디</string>
+    <string name="id_hint">아이디를 입력해주세요</string>
+    <string name="pw">비밀번호</string>
+    <string name="pw_hint">비밀번호를 입력해주세요</string>
+    <string name="login">LOGIN</string>
+    <string name="signup">회원가입</string>
 </resources>
