@@ -1,12 +1,9 @@
-package thesopt.assignment.hot_yongmin
+package thesopt.assignment.hot_yongmin.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
-import thesopt.assignment.hot_yongmin.ContextExt.shortToast
+import thesopt.assignment.hot_yongmin.util.ContextExt.shortToast
 import thesopt.assignment.hot_yongmin.databinding.ActivitySignInBinding
 
 class SignInActivity : AppCompatActivity() {
@@ -19,7 +16,6 @@ class SignInActivity : AppCompatActivity() {
 
         val signUpIntent = Intent(this, SignUpActivity::class.java)
         val homeIntent = Intent(this, HomeActivity::class.java)
-        val receiveIntent = intent
 
         binding.btnSignup.setOnClickListener{
             startActivity(signUpIntent)
@@ -34,7 +30,7 @@ class SignInActivity : AppCompatActivity() {
             }
         }
 
-        binding.etId.setText(receiveIntent.getStringExtra("id"))
-        binding.etPw.setText(receiveIntent.getStringExtra("pw"))
+        binding.etId.setText(intent.getStringExtra("id"))
+        binding.etPw.setText(intent.getStringExtra("pw"))
     }
 }

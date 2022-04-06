@@ -1,9 +1,9 @@
-package thesopt.assignment.hot_yongmin
+package thesopt.assignment.hot_yongmin.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import thesopt.assignment.hot_yongmin.ContextExt.shortToast
+import thesopt.assignment.hot_yongmin.util.ContextExt.shortToast
 import thesopt.assignment.hot_yongmin.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
@@ -21,7 +21,6 @@ class SignUpActivity : AppCompatActivity() {
             else{
                 intent.putExtra("id", binding.etId.text.toString())
                 intent.putExtra("pw", binding.etPw.text.toString())
-                startActivity(intent)
                 this.shortToast("회원가입 되었습니다.")
                 finish()
             }
