@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HotYongmin">
         <activity
-            android:name=".ui.HomeActivity"
+            android:name="thesopt.assignment.hot_yongmin.presentation.ui.main.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SignUpActivity"
+            android:name="thesopt.assignment.hot_yongmin.presentation.ui.auth.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SignInActivity"
+            android:name="thesopt.assignment.hot_yongmin.presentation.ui.auth.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MainActivity"
+            android:name="thesopt.assignment.hot_yongmin.presentation.ui.main.MainActivity"
             android:exported="false"/>
     </application>
 

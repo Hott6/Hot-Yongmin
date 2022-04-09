@@ -1,4 +1,4 @@
-package thesopt.assignment.hot_yongmin.util
+package thesopt.assignment.hot_yongmin.presentation.util
 
 import android.content.Context
 import android.widget.Toast

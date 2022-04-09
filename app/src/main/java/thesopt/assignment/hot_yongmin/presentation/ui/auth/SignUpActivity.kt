@@ -1,9 +1,9 @@
-package thesopt.assignment.hot_yongmin.ui
+package thesopt.assignment.hot_yongmin.presentation.ui.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import thesopt.assignment.hot_yongmin.util.ContextExt.shortToast
+import thesopt.assignment.hot_yongmin.presentation.util.ContextExt.shortToast
 import thesopt.assignment.hot_yongmin.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {

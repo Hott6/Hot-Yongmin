@@ -1,13 +1,13 @@
-package thesopt.assignment.hot_yongmin.ui
+package thesopt.assignment.hot_yongmin.presentation.ui.auth
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import thesopt.assignment.hot_yongmin.util.ContextExt.shortToast
+import thesopt.assignment.hot_yongmin.presentation.util.ContextExt.shortToast
 import thesopt.assignment.hot_yongmin.databinding.ActivitySignInBinding
+import thesopt.assignment.hot_yongmin.presentation.ui.main.HomeActivity
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySignInBinding
