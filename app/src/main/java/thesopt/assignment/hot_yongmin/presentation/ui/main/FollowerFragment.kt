@@ -5,11 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import thesopt.assignment.hot_yongmin.R
 import thesopt.assignment.hot_yongmin.data.entity.FollowerData
-import thesopt.assignment.hot_yongmin.databinding.FragmentFirstBinding
+import thesopt.assignment.hot_yongmin.databinding.FragmentFollowerBinding
 
-class FirstFragment : Fragment() {
-    private var _binding : FragmentFirstBinding? = null
+class FollowerFragment : Fragment() {
+    private var _binding : FragmentFollowerBinding? = null
     private val binding get() = _binding!!
     private lateinit var followerAdapter: FollowerAdapter
 
@@ -17,14 +18,19 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentFirstBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentFollowerBinding.inflate(layoutInflater, container, false)
         initAdapter()
         return binding.root
     }
 
     private fun initAdapter(){
         val followerAdapter = FollowerAdapter()
-        binding.rvFollower.adapter = followerAdapter
+        with(binding){
+            rvFollower.adapter = followerAdapter
+            rvFollower.addItemDecoration(VerticalItemDecoration(resources.getDimensionPixelOffset(R.dimen.margin_15), 1))
+            rvFollower.addItemDecoration(HorizontalItemDecoration(resources.getDimensionPixelOffset(R.dimen.margin_30), 1))
+        }
+
         followerAdapter.followerList.addAll(
             listOf(
                 FollowerData("권용민", "30기 OB"),
