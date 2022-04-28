@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_radius_5">
 
     <ImageView
         android:id="@+id/iv_profile"
@@ -12,6 +12,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:src="@drawable/profile_emoji"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@id/tv_introduction"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,8 +23,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintBottom_toTopOf="@+id/tv_introduction"
         app:layout_constraintStart_toEndOf="@+id/iv_profile"
@@ -34,8 +38,9 @@
         android:id="@+id/tv_introduction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tv_name"
         app:layout_constraintTop_toBottomOf="@+id/tv_name"

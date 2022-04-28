@@ -17,8 +17,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initTransaction(){
-        val fragment1 = FirstFragment()
-        val fragment2 = SecondFragment()
+        val fragment1 = FollowerFragment()
+        val fragment2 = RepoFragment()
 
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, fragment1).commit()
 
