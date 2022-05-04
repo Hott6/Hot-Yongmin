@@ -10,4 +10,8 @@
 
     <color name="purple_DDC2FF">#DDC2FF</color>
     <color name="blue_A4CFFF">#A4CFFF</color>
+    <color name="gray_E6E6E6">#E6E6E6</color>
+    <color name="black_444444">#444444</color>
+    <color name="gray_DFDAED">#DFDAED</color>
+    <color name="gray_8F8F8F">#8F8F8F</color>
 </resources>

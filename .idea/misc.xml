@@ -4,17 +4,30 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2445" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/drawable/circle_border_black.xml" value="0.206" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.206" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/drawable/ic_icn_message.xml" value="0.1995" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/drawable/rectangle_button_selector_radius_5.xml" value="0.206" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/drawable/rectangle_radius_5.xml" value="0.221" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/drawable/selector_bottom_navi.xml" value="0.1" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/drawable/tv_send.xml" value="0.1995" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/activity_chatting.xml" value="0.264" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/activity_sign_in.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/activity_sign_up.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/activity_vp_test.xml" value="0.1125" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_first.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_follower.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_repo.xml" value="0.264" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_second.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/item_github_follower.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_thrid.xml" value="0.1125" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/item_chatting_mine.xml" value="0.4" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/item_chatting_others.xml" value="0.4" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/item_github_follower.xml" value="0.264" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/item_github_repo.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/menu/menu_bottom_navi.xml" value="0.25364583333333335" />
       </map>
     </option>
   </component>

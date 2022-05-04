@@ -2,45 +2,59 @@ package thesopt.assignment.hot_yongmin.presentation.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.viewpager2.widget.ViewPager2
 import thesopt.assignment.hot_yongmin.R
 import thesopt.assignment.hot_yongmin.databinding.ActivityMainBinding
+import thesopt.assignment.hot_yongmin.presentation.ui.main.camera.CameraFragment
+import thesopt.assignment.hot_yongmin.presentation.ui.main.home.HomeFragment
+import thesopt.assignment.hot_yongmin.presentation.ui.main.profile.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
-    private var position = FIRST_FRAGMENT
     private lateinit var binding : ActivityMainBinding
-
+    private lateinit var vpAdapter:VpAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initTransaction()
+        initAdapter()
+        initBottomNavi()
     }
 
-    fun initTransaction(){
-        val fragment1 = FollowerFragment()
-        val fragment2 = RepoFragment()
+    private fun initAdapter(){
+        val fragmentList = listOf(ProfileFragment(), HomeFragment(), CameraFragment())
+        vpAdapter= VpAdapter(this)
+        vpAdapter.fragments.addAll(fragmentList)
+        binding.vpMain.adapter=vpAdapter
+    }
 
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, fragment1).commit()
+    private fun initBottomNavi(){
+        binding.vpMain.registerOnPageChangeCallback(object:ViewPager2.OnPageChangeCallback(){
+            override fun onPageSelected(position:Int) {
+                binding.bnvMain.menu.getItem(position).isChecked=true
+            }
+        })
 
-        binding.btnFragmentChange.setOnClickListener{
-            val transaction = supportFragmentManager.beginTransaction()
-
-            when(position){
-                FIRST_FRAGMENT ->{
-                    transaction.replace(R.id.fragmentContainerView, fragment2)
-                    position = SECOND_FRAGMENT
+        binding.bnvMain.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.menu_android->{
+                    binding.vpMain.currentItem= PROFILE_FRAGMENT
+                    return@setOnItemSelectedListener true
                 }
-                SECOND_FRAGMENT ->{
-                    transaction.replace(R.id.fragmentContainerView, fragment1)
-                    position= FIRST_FRAGMENT
+                R.id.menu_list->{
+                    binding.vpMain.currentItem= HOME_FRAGMENT
+                    return@setOnItemSelectedListener true
+                }
+                else->{
+                    binding.vpMain.currentItem= CAMERA_FRAGMENT
+                    return@setOnItemSelectedListener true
                 }
             }
-            transaction.commit()
         }
     }
 
     companion object{
-        const val FIRST_FRAGMENT = 1
-        const val SECOND_FRAGMENT = 2
+        const val PROFILE_FRAGMENT = 0
+        const val HOME_FRAGMENT = 1
+        const val CAMERA_FRAGMENT = 2
     }
 }

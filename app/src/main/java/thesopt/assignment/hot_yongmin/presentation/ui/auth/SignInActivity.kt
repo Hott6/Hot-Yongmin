@@ -7,7 +7,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import thesopt.assignment.hot_yongmin.presentation.util.ContextExt.shortToast
 import thesopt.assignment.hot_yongmin.databinding.ActivitySignInBinding
-import thesopt.assignment.hot_yongmin.presentation.ui.main.HomeActivity
+import thesopt.assignment.hot_yongmin.presentation.ui.main.MainActivity
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySignInBinding
@@ -43,7 +43,7 @@ class SignInActivity : AppCompatActivity() {
 
     private fun clickLogin(){
         binding.btnLogin.setOnClickListener{
-            val homeIntent = Intent(this, HomeActivity::class.java)
+            val homeIntent = Intent(this, MainActivity::class.java)
             if(binding.etId.text.isEmpty() or binding.etPw.text.isEmpty()){
                 this.shortToast("아이디/비밀번호를 확인해주세요")
             }
