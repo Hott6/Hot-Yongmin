@@ -1,13 +1,18 @@
 package thesopt.assignment.hot_yongmin.presentation.ui.main.home
 
+import android.Manifest
+import android.content.pm.PackageManager.PERMISSION_DENIED
+import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import com.google.android.material.tabs.TabLayoutMediator
 import thesopt.assignment.hot_yongmin.R
 import thesopt.assignment.hot_yongmin.databinding.FragmentHomeBinding
+import thesopt.assignment.hot_yongmin.presentation.util.ContextExt.shortToast
 
 class HomeFragment : Fragment() {
     private var _binding : FragmentHomeBinding? = null
