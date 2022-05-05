@@ -18,8 +18,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.2"
         app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
-        app:strokeColor="@color/purple_DDC2FF"
+        app:strokeColor="@color/black_444444"
         app:strokeWidth="2dp" />
+
+    <!--<ImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="15dp"
+        android:padding="2dp"
+        android:background="@drawable/circle_border_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.2" />-->
 
     <TextView
         android:id="@+id/tv_name"
@@ -51,7 +65,7 @@
         android:id="@+id/tv_line"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@color/purple_DDC2FF"
+        android:background="@color/gray_8F8F8F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
