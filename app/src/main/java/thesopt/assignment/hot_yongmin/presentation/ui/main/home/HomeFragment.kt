@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.tabs.TabLayoutMediator
+import thesopt.assignment.hot_yongmin.R
 import thesopt.assignment.hot_yongmin.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -30,7 +31,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initTabLayout(){
-        val tabLabel = listOf("FOLLOWING", "FOLLOWER")
+        val tabLabel = listOf(resources.getString(R.string.follower), resources.getString(R.string.following))
         TabLayoutMediator(binding.layoutTab, binding.vpHome){
             tab, position->tab.text = tabLabel[position]
         }.attach()

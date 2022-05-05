@@ -24,21 +24,21 @@ class FollowerFragment : Fragment() {
     }
 
     private fun initAdapter(){
-        val followerAdapter = FollowerAdapter()
+        followerAdapter = FollowerAdapter()
         with(binding){
             rvFollower.adapter = followerAdapter
-            rvFollower.addItemDecoration(VerticalItemDecoration(resources.getDimensionPixelOffset(R.dimen.margin_15), 1))
+            //rvFollower.addItemDecoration(VerticalItemDecoration(resources.getDimensionPixelOffset(R.dimen.margin_15), 1))
             rvFollower.addItemDecoration(HorizontalItemDecoration(resources.getDimensionPixelOffset(R.dimen.margin_30), 1))
         }
 
         followerAdapter.followerList.addAll(
             listOf(
-                FollowerData("권용민", "30기 OB"),
-                FollowerData("김수빈", "30기 OB"),
-                FollowerData("최윤정", "30기 YB"),
-                FollowerData("최유리", "30기 YB"),
-                FollowerData("이준원", "30기 YB"),
-                FollowerData("이강민", "30기 파트장")
+                FollowerData("권용민", "30기 OB", R.drawable.altongmon),
+                FollowerData("김수빈", "30기 OB", R.drawable.kkomongul),
+                FollowerData("최윤정", "30기 YB", R.drawable.mazayong),
+                FollowerData("최유리", "30기 YB", R.drawable.chicorita),
+                FollowerData("이준원", "30기 YB", R.drawable.kkojimo),
+                FollowerData("이강민", "30기 파트장", R.drawable.dandaegi)
             )
         )
         followerAdapter.notifyDataSetChanged()

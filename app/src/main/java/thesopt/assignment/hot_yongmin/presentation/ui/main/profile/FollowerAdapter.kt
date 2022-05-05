@@ -16,7 +16,7 @@ class FollowerAdapter:RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>()
         fun onBind(data:FollowerData){
             binding.tvName.text = data.name
             binding.tvIntroduction.text = data.introduction
-            Glide.with(itemView.context).load(R.drawable.profile_emoji)
+            Glide.with(itemView.context).load(data.image)
                 .circleCrop().into(binding.ivProfile)
         }
     }
