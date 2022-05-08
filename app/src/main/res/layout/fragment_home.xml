@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.main.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/iv_github"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/img_github"
+        android:layout_marginTop="40dp"
+        app:layout_constraintWidth_percent="0.19"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_github"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/github"
+        android:fontFamily="@font/noto_sans_kr_bold"
+        android:includeFontPadding="false"
+        android:textSize="20sp"
+        android:outlineAmbientShadowColor="@color/black_444444"
+        android:layout_marginTop="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_github" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/layout_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        app:tabTextColor="@color/gray_8F8F8F"
+        app:layout_constraintTop_toBottomOf="@+id/tv_github"
+        app:tabGravity="fill"
+        app:tabIconTint="@color/purple_DDC2FF"
+        app:tabIndicatorColor="@color/purple_DDC2FF"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/purple_DDC2FF">
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.integration.testapp.NestedScrollableHost
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_tab">
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.viewpager2.integration.testapp.NestedScrollableHost>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

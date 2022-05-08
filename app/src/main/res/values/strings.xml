@@ -13,4 +13,11 @@
     <string name="description">안녕하세요 저는 30기 더 솝트 안드로이드 파트 OB 권용민입니다.\n저는 축구, 사진, 음악감상을 좋아합니다. 요즘은 특히 힙합음악에 빠져있지만 다른 장르도 좋아합니다.\n\n스크롤뷰 테스트\n스크롤뷰 테스트\n스크롤뷰 테스트\n스크롤뷰 테스트\n스크롤뷰 테스트\n스크롤뷰 테스트\n스크롤뷰 테스트\n스크롤뷰 테스트\n스크롤뷰 테스트\n스크롤뷰 테스트\n</string>
     <string name="follower_list">팔로워\n목록</string>
     <string name="repo_list">레포지토리\n목록</string>
+    <string name="github">GitHub</string>
+    <string name="follower">FOLLWER</string>
+    <string name="following">FOLLOWING</string>
+    <string name="upload_image">이미지 업로드</string>
+    <string name="title_camera">프로필 사진\n업로드</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
