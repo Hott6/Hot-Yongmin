@@ -9,5 +9,5 @@ interface GithubService {
     @GET("{githubId}/followers")
     fun getGithubFollowers(
         @Path("githubId") githubId:String
-    ): Call<ResponseGithubFollowers>
+    ): Call<List<ResponseGithubFollowers>>
 }

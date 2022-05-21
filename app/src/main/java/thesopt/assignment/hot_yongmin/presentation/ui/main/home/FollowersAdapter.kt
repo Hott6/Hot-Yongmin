@@ -5,32 +5,34 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import thesopt.assignment.hot_yongmin.data.remote.data.entity.home.ResponseGithubFollowers
 import thesopt.assignment.hot_yongmin.databinding.ItemGithubFollowersBinding
 
 class FollowersAdapter :
-    ListAdapter<ResponseGithubFollowers.Data, FollowersAdapter.FollowersViewHolder>(
+    ListAdapter<ResponseGithubFollowers, FollowersAdapter.FollowersViewHolder>(
         FollowersComparator()
     ) {
 
     class FollowersViewHolder(private val binding: ItemGithubFollowersBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: ResponseGithubFollowers.Data) {
+        fun onBind(data: ResponseGithubFollowers) {
             binding.followersData = data
+            Glide.with(binding.ivProfile.context).load(data.profileImage).into(binding.ivProfile)
         }
     }
 
-    private class FollowersComparator : DiffUtil.ItemCallback<ResponseGithubFollowers.Data>() {
+    private class FollowersComparator : DiffUtil.ItemCallback<ResponseGithubFollowers>() {
         override fun areItemsTheSame(
-            oldItem: ResponseGithubFollowers.Data,
-            newItem: ResponseGithubFollowers.Data
+            oldItem: ResponseGithubFollowers,
+            newItem: ResponseGithubFollowers
         ): Boolean {
             return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(
-            oldItem: ResponseGithubFollowers.Data,
-            newItem: ResponseGithubFollowers.Data
+            oldItem: ResponseGithubFollowers,
+            newItem: ResponseGithubFollowers
         ): Boolean {
             return oldItem == newItem
         }

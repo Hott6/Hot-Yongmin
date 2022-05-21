@@ -16,11 +16,12 @@
         android:theme="@style/Theme.HotYongmin">
         <activity
             android:name=".presentation.ui.main.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.ui.chatting.ChattingActivity"
-            android:windowSoftInputMode="adjustPan"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".presentation.ui.auth.SignUpActivity"
@@ -28,11 +29,6 @@
         <activity
             android:name=".presentation.ui.auth.SignInActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

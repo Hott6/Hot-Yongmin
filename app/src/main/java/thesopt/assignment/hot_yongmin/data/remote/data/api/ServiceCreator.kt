@@ -1,5 +1,6 @@
 package thesopt.assignment.hot_yongmin.data.remote.data.api
 
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
