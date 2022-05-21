@@ -3,7 +3,7 @@ package thesopt.assignment.hot_yongmin.presentation.ui.main.profile
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import thesopt.assignment.hot_yongmin.data.entity.RepoData
+import thesopt.assignment.hot_yongmin.data.local.entity.RepoData
 import thesopt.assignment.hot_yongmin.databinding.ItemGithubRepoBinding
 
 class RepoAdapter:RecyclerView.Adapter<RepoAdapter.RepoViewHolder>() {

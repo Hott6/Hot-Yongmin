@@ -20,6 +20,7 @@
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_camera.xml" value="0.2" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_first.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_follower.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_followers.xml" value="0.1" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/fragment_repo.xml" value="0.264" />
@@ -30,6 +31,7 @@
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/item_chatting_mine.xml" value="0.4" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/item_chatting_others.xml" value="0.4" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/item_github_follower.xml" value="0.264" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/item_github_followers.xml" value="0.264" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/layout/item_github_repo.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/Hot-Yongmin/app/src/main/res/menu/menu_bottom_navi.xml" value="0.25364583333333335" />
       </map>

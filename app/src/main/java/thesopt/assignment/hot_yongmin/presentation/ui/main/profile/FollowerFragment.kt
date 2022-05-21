@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import thesopt.assignment.hot_yongmin.R
-import thesopt.assignment.hot_yongmin.data.entity.FollowerData
+import thesopt.assignment.hot_yongmin.data.local.entity.FollowerData
 import thesopt.assignment.hot_yongmin.databinding.FragmentFollowerBinding
 
 class FollowerFragment : Fragment() {

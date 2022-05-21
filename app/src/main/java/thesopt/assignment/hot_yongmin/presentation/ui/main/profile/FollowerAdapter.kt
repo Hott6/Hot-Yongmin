@@ -4,8 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import thesopt.assignment.hot_yongmin.R
-import thesopt.assignment.hot_yongmin.data.entity.FollowerData
+import thesopt.assignment.hot_yongmin.data.local.entity.FollowerData
 import thesopt.assignment.hot_yongmin.databinding.ItemGithubFollowerBinding
 
 class FollowerAdapter:RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>() {

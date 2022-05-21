@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import thesopt.assignment.hot_yongmin.R
-import thesopt.assignment.hot_yongmin.data.entity.RepoData
+import thesopt.assignment.hot_yongmin.data.local.entity.RepoData
 import thesopt.assignment.hot_yongmin.databinding.FragmentRepoBinding
 
 class RepoFragment : Fragment() {
