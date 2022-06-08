@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.main.home.FollowersFragment" >
+    tools:context=".presentation.ui.main.home.FollowersFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_followers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_github_followers"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+        tools:listitem="@layout/item_github_followers" />
 </androidx.constraintlayout.widget.ConstraintLayout>
