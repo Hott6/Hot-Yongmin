@@ -1,7 +1,7 @@
-package thesopt.assignment.hot_yongmin.data.dao
+package thesopt.assignment.hot_yongmin.data.local.dao
 
 import androidx.room.*
-import thesopt.assignment.hot_yongmin.data.entity.User
+import thesopt.assignment.hot_yongmin.data.local.entity.User
 
 @Dao
 interface UserDao {

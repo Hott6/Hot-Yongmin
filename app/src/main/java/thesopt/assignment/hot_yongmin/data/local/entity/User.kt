@@ -1,4 +1,4 @@
-package thesopt.assignment.hot_yongmin.data.entity
+package thesopt.assignment.hot_yongmin.data.local.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
