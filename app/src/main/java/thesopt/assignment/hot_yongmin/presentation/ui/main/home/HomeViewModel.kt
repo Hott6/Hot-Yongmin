@@ -12,6 +12,19 @@ import thesopt.assignment.hot_yongmin.data.remote.data.entity.home.ResponseGithu
 class HomeViewModel : ViewModel() {
 
     val followersData = MutableLiveData<List<ResponseGithubFollowers>>()
+    val call: Call<List<ResponseGithubFollowers>> =
+        ServiceCreator.githubService.getGithubFollowers("briandr97")
+
+    /*fun initNetwork(){
+        call.enqueueUtil(
+            onSuccess = {
+                followersData.value=it
+            },
+            onError = {
+                Log.d("server", "오류")
+            }
+        )
+    }*/
 
     fun connectNetwork() {
         val call: Call<List<ResponseGithubFollowers>> =
@@ -24,6 +37,7 @@ class HomeViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     Log.d("followersServer", "onResponse success")
                     followersData.value = response.body()
+                    Log.d("asdf", "${response.body()}")
                 } else {
                     Log.d("followersServer", "onResponse fail")
                 }

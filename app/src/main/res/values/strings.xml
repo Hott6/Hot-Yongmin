@@ -18,6 +18,10 @@
     <string name="following">FOLLOWING</string>
     <string name="upload_image">이미지 업로드</string>
     <string name="title_camera">프로필 사진\n업로드</string>
+    <string name="onboarding1">GitHub에 오신걸 환영합니다!</string>
+    <string name="onboarding2">GitHub에서 즐거운 시간 보내시길 바랍니다!</string>
+    <string name="onboarding3">GitHub를 시작해봅시다!</string>
+    <string name="check_signup">아직 회원가입하지 않으셨나요?</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

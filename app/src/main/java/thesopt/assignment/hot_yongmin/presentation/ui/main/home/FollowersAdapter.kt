@@ -9,16 +9,19 @@ import com.bumptech.glide.Glide
 import thesopt.assignment.hot_yongmin.data.remote.data.entity.home.ResponseGithubFollowers
 import thesopt.assignment.hot_yongmin.databinding.ItemGithubFollowersBinding
 
-class FollowersAdapter :
+class FollowersAdapter(val itemClick : (ResponseGithubFollowers)->Unit) :
     ListAdapter<ResponseGithubFollowers, FollowersAdapter.FollowersViewHolder>(
         FollowersComparator()
     ) {
 
-    class FollowersViewHolder(private val binding: ItemGithubFollowersBinding) :
+    class FollowersViewHolder(private val binding: ItemGithubFollowersBinding, private val itemClick : (ResponseGithubFollowers)->Unit) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ResponseGithubFollowers) {
             binding.followersData = data
             Glide.with(binding.ivProfile.context).load(data.profileImage).into(binding.ivProfile)
+            binding.root.setOnClickListener{
+                itemClick(data)
+            }
         }
     }
 
@@ -42,7 +45,7 @@ class FollowersAdapter :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FollowersViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ItemGithubFollowersBinding.inflate(layoutInflater, parent, false)
-        return FollowersViewHolder(binding)
+        return FollowersViewHolder(binding, itemClick)
     }
 
     override fun onBindViewHolder(holder: FollowersViewHolder, position: Int) {
