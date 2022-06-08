@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_sample"
+    app:startDestination="@id/onboarding1Fragment">
+
+    <fragment
+        android:id="@+id/onboarding1Fragment"
+        android:name="thesopt.assignment.hot_yongmin.presentation.ui.onboarding.Onboarding1Fragment"
+        android:label="fragment_onboarding1"
+        tools:layout="@layout/fragment_onboarding1" >
+        <action
+            android:id="@+id/action_onboarding1Fragment_to_onboarding2Fragment"
+            app:destination="@id/onboarding2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding2Fragment"
+        android:name="thesopt.assignment.hot_yongmin.presentation.ui.onboarding.Onboarding2Fragment"
+        android:label="fragment_onboarding2"
+        tools:layout="@layout/fragment_onboarding2" >
+        <action
+            android:id="@+id/action_onboarding2Fragment_to_onboarding3Fragment"
+            app:destination="@id/onboarding3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding3Fragment"
+        android:name="thesopt.assignment.hot_yongmin.presentation.ui.onboarding.Onboarding3Fragment"
+        android:label="fragment_onboarding3"
+        tools:layout="@layout/fragment_onboarding3" >
+        <action
+            android:id="@+id/action_onboarding3Fragment_to_signInActivity"
+            app:destination="@id/signInActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/signInActivity"
+        android:name="thesopt.assignment.hot_yongmin.presentation.ui.auth.SignInActivity"
+        android:label="activity_sign_in"
+        tools:layout="@layout/activity_sign_in" />
+</navigation>

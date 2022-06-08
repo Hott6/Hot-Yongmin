@@ -15,6 +15,7 @@ import thesopt.assignment.hot_yongmin.presentation.ui.main.MainActivity
 import thesopt.assignment.hot_yongmin.data.remote.data.entity.auth.RequestSignIn
 import thesopt.assignment.hot_yongmin.data.remote.data.entity.auth.ResponseSignIn
 import thesopt.assignment.hot_yongmin.data.remote.data.api.ServiceCreator
+import thesopt.assignment.hot_yongmin.data.local.database.GithubSharedPreferences
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySignInBinding
@@ -23,11 +24,13 @@ class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
+        GithubSharedPreferences.init(this)
         clickLogin()
         clickSignUp()
         setResultSignUp()
+
+        setContentView(binding.root)
     }
 
     private fun loginNetwork(){
@@ -44,6 +47,7 @@ class SignInActivity : AppCompatActivity() {
                 if(response.isSuccessful){
                     val data = response.body()?.data
                     this@SignInActivity.shortToast("${data?.email}")
+                    checkAutoLogin()
                     startActivity(Intent(this@SignInActivity, MainActivity::class.java))
                     this@SignInActivity.shortToast("onResponse isSuccessful.")
                 }
@@ -70,8 +74,18 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
+    private fun checkAutoLogin(){
+        if(binding.cbAutoLogin.isChecked){
+            GithubSharedPreferences.setAutoLogin(true)
+            shortToast("자동로그인 되었습니다!")
+        }
+        else{
+            GithubSharedPreferences.setAutoLogin(false)
+        }
+    }
+
     private fun clickSignUp(){
-        binding.btnSignup.setOnClickListener{
+        binding.tvSignup.setOnClickListener{
             val signUpIntent = Intent(this, SignUpActivity::class.java)
             resultLauncher.launch(signUpIntent)
         }
@@ -79,7 +93,6 @@ class SignInActivity : AppCompatActivity() {
 
     private fun clickLogin(){
         binding.btnLogin.setOnClickListener{
-            val homeIntent = Intent(this, MainActivity::class.java)
             if(binding.etId.text.isEmpty() or binding.etPw.text.isEmpty()){
                 this.shortToast("아이디/비밀번호를 확인해주세요")
             }
@@ -88,4 +101,8 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("lifecycle", "SignIn die")
+    }
 }
