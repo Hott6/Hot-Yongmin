@@ -34,8 +34,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun checkOnboarding() {
-        if(GithubSharedPreferences.onBoarding){
-        //if (GithubSharedPreferences.getOnboarding()) {
+        if (GithubSharedPreferences.onBoarding) {
             checkAutoLogin()
         } else {
             val intent = Intent(this, OnboardingActivity::class.java)
@@ -44,8 +43,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun checkAutoLogin() {
-        if(GithubSharedPreferences.autoLogin){
-        //if (GithubSharedPreferences.getAutoLogin()) {
+        if (GithubSharedPreferences.autoLogin) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         } else {

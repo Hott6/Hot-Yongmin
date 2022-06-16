@@ -1,7 +1,6 @@
 package thesopt.assignment.hot_yongmin.presentation.ui.onboarding
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,14 +19,17 @@ class Onboarding3Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentOnboarding3Binding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.tvNext.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding3Fragment_to_signInActivity)
             GithubSharedPreferences.init(requireContext())
             GithubSharedPreferences.onBoarding = true
-            //GithubSharedPreferences.setOnboarding(true)
             activity?.finish()
         }
-        return binding.root
     }
 
     override fun onDestroyView() {

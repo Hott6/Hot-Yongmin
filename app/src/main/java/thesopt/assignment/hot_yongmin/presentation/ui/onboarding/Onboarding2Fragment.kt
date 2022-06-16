@@ -17,10 +17,14 @@ class Onboarding2Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentOnboarding2Binding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.tvNext.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding2Fragment_to_onboarding3Fragment)
         }
-        return binding.root
     }
 
     override fun onDestroyView() {

@@ -10,46 +10,22 @@ object GithubSharedPreferences {
     private const val LOGIN_ID = "LOGIN_ID"
     private const val ONBOARDING = "ONBOARDING"
     private lateinit var loginPreferences: SharedPreferences
-    private lateinit var editor : SharedPreferences.Editor
+    private lateinit var editor: SharedPreferences.Editor
 
     fun init(context: Context) {
         loginPreferences = context.getSharedPreferences(STORAGE_KEY, Context.MODE_PRIVATE)
         editor = loginPreferences.edit()
     }
 
-    /*fun getAutoLogin(): Boolean {
-        return loginPreferences.getBoolean(AUTO_LOGIN, false)
-    }
-
-    fun setAutoLogin(value: Boolean) {
-        editor.putBoolean(AUTO_LOGIN, value).apply()
-    }
-
-    fun setOnboarding(value: Boolean) {
-        editor.putBoolean(ONBOARDING, value).apply()
-    }
-
-    fun getOnboarding(): Boolean {
-        return loginPreferences.getBoolean(ONBOARDING, false)
-    }
-
-    fun setLoginId(value: String) {
-        editor.putString(LOGIN_ID, value).apply()
-    }
-
-    fun getLoginId(): String? {
-        return loginPreferences.getString(LOGIN_ID, "")
-    }*/
-
     var autoLogin: Boolean
         get() = loginPreferences.getBoolean(AUTO_LOGIN, false)
         set(value) = editor.putBoolean(AUTO_LOGIN, value).apply()
 
-    var onBoarding : Boolean
+    var onBoarding: Boolean
         get() = loginPreferences.getBoolean(ONBOARDING, false)
         set(value) = editor.putBoolean(ONBOARDING, value).apply()
 
-    var loginId : String?
+    var loginId: String?
         get() = loginPreferences.getString(LOGIN_ID, "")
         set(value) = editor.putString(LOGIN_ID, value).apply()
 
@@ -57,7 +33,7 @@ object GithubSharedPreferences {
         editor.remove(AUTO_LOGIN).apply()
     }
 
-    fun clear(){
+    fun clear() {
         editor.clear().apply()
     }
 }

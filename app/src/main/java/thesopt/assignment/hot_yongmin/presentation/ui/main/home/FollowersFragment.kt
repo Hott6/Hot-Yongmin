@@ -15,7 +15,7 @@ import thesopt.assignment.hot_yongmin.presentation.ui.main.profile.VerticalItemD
 
 class FollowersFragment : Fragment() {
     private var _binding: FragmentFollowersBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding ?: error("binding이 초기화 되지 않았습니다.")
     private lateinit var followersAdapter: FollowersAdapter
     private val homeViewModel by viewModels<HomeViewModel>()
 
@@ -24,9 +24,14 @@ class FollowersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentFollowersBinding.inflate(layoutInflater)
-        homeViewModel.connectNetwork()
-        initAdapter()
+        homeViewModel.initNetwork()
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initAdapter()
+        observeData()
     }
 
     private fun initAdapter() {
@@ -40,7 +45,9 @@ class FollowersFragment : Fragment() {
         val sizeV = resources.getDimensionPixelSize(R.dimen.margin_30)
         binding.rvFollowers.addItemDecoration(HorizontalItemDecoration(sizeH, 2))
         binding.rvFollowers.addItemDecoration(VerticalItemDecoration(sizeV, 2))
+    }
 
+    private fun observeData() {
         homeViewModel.followersData.observe(viewLifecycleOwner) {
             followersAdapter.submitList(it)
         }
