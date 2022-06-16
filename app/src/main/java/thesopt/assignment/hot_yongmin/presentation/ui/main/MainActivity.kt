@@ -2,8 +2,10 @@ package thesopt.assignment.hot_yongmin.presentation.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.viewpager2.widget.ViewPager2
 import thesopt.assignment.hot_yongmin.R
+import thesopt.assignment.hot_yongmin.data.local.database.GithubSharedPreferences
 import thesopt.assignment.hot_yongmin.databinding.ActivityMainBinding
 import thesopt.assignment.hot_yongmin.presentation.ui.main.camera.CameraFragment
 import thesopt.assignment.hot_yongmin.presentation.ui.main.home.HomeFragment

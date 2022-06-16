@@ -15,6 +15,9 @@
         android:theme="@style/Theme.HotYongmin"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".presentation.ui.auth.SettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.onboarding.SplashActivity"
             android:exported="true">
             <intent-filter>

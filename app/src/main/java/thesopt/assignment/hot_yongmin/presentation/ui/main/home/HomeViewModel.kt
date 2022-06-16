@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import thesopt.assignment.hot_yongmin.data.local.database.GithubSharedPreferences
 import thesopt.assignment.hot_yongmin.data.remote.data.api.ServiceCreator
 import thesopt.assignment.hot_yongmin.data.remote.data.entity.home.ResponseGithubFollowers
 
@@ -14,6 +15,8 @@ class HomeViewModel : ViewModel() {
     val followersData = MutableLiveData<List<ResponseGithubFollowers>>()
     val call: Call<List<ResponseGithubFollowers>> =
         ServiceCreator.githubService.getGithubFollowers("briandr97")
+    private val id = GithubSharedPreferences.loginId ?: ""
+    //private val id = GithubSharedPreferences.getLoginId()?:""
 
     /*fun initNetwork(){
         call.enqueueUtil(
@@ -28,7 +31,7 @@ class HomeViewModel : ViewModel() {
 
     fun connectNetwork() {
         val call: Call<List<ResponseGithubFollowers>> =
-            ServiceCreator.githubService.getGithubFollowers("briandr97")
+            ServiceCreator.githubService.getGithubFollowers(id)
         call.enqueue(object : Callback<List<ResponseGithubFollowers>> {
             override fun onResponse(
                 call: Call<List<ResponseGithubFollowers>>,

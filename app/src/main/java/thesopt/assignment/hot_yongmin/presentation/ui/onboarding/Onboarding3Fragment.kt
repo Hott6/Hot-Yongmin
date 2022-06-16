@@ -1,6 +1,7 @@
 package thesopt.assignment.hot_yongmin.presentation.ui.onboarding
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +23,8 @@ class Onboarding3Fragment : Fragment() {
         binding.tvNext.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding3Fragment_to_signInActivity)
             GithubSharedPreferences.init(requireContext())
-            GithubSharedPreferences.setOnboarding(true)
+            GithubSharedPreferences.onBoarding = true
+            //GithubSharedPreferences.setOnboarding(true)
             activity?.finish()
         }
         return binding.root

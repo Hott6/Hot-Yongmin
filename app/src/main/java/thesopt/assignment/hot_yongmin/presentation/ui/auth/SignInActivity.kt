@@ -48,8 +48,11 @@ class SignInActivity : AppCompatActivity() {
                     val data = response.body()?.data
                     this@SignInActivity.shortToast("${data?.email}")
                     checkAutoLogin()
+                    GithubSharedPreferences.loginId = binding.etId.text.toString()
+                    //GithubSharedPreferences.setLoginId(binding.etId.text.toString())
                     startActivity(Intent(this@SignInActivity, MainActivity::class.java))
                     this@SignInActivity.shortToast("onResponse isSuccessful.")
+                    finish()
                 }
                 else{
                     this@SignInActivity.shortToast("onResponse not Successful")
@@ -76,11 +79,13 @@ class SignInActivity : AppCompatActivity() {
 
     private fun checkAutoLogin(){
         if(binding.cbAutoLogin.isChecked){
-            GithubSharedPreferences.setAutoLogin(true)
-            shortToast("자동로그인 되었습니다!")
+            GithubSharedPreferences.autoLogin = true
+            //GithubSharedPreferences.setAutoLogin(true)
+            shortToast("자동로그인으로 설정하셨습니다!")
         }
         else{
-            GithubSharedPreferences.setAutoLogin(false)
+            GithubSharedPreferences.autoLogin = false
+            //GithubSharedPreferences.setAutoLogin(false)
         }
     }
 

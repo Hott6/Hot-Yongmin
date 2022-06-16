@@ -6,35 +6,58 @@ import android.content.SharedPreferences
 object GithubSharedPreferences {
 
     private const val STORAGE_KEY = "USER_AUTH"
-    private const val STORAGE_KEY2 = "ONBOARDING"
     private const val AUTO_LOGIN = "AUTO_LOGIN"
+    private const val LOGIN_ID = "LOGIN_ID"
     private const val ONBOARDING = "ONBOARDING"
     private lateinit var loginPreferences: SharedPreferences
-    //private lateinit var onboardingPreferences : SharedPreferences
+    private lateinit var editor : SharedPreferences.Editor
 
     fun init(context: Context) {
         loginPreferences = context.getSharedPreferences(STORAGE_KEY, Context.MODE_PRIVATE)
-        //onboardingPreferences = context.getSharedPreferences(STORAGE_KEY2, Context.MODE_PRIVATE)
+        editor = loginPreferences.edit()
     }
 
-    fun getAutoLogin(): Boolean {
+    /*fun getAutoLogin(): Boolean {
         return loginPreferences.getBoolean(AUTO_LOGIN, false)
     }
 
     fun setAutoLogin(value: Boolean) {
-        loginPreferences.edit().putBoolean(AUTO_LOGIN, value).apply()
-    }
-
-    fun setLogout(context: Context) {
-        //preferences=context.getSharedPreferences(STORAGE_KEY, Context.MODE_PRIVATE)
-        loginPreferences.edit().remove(AUTO_LOGIN).clear().apply()
+        editor.putBoolean(AUTO_LOGIN, value).apply()
     }
 
     fun setOnboarding(value: Boolean) {
-        loginPreferences.edit().putBoolean(ONBOARDING, value).apply()
+        editor.putBoolean(ONBOARDING, value).apply()
     }
 
     fun getOnboarding(): Boolean {
         return loginPreferences.getBoolean(ONBOARDING, false)
+    }
+
+    fun setLoginId(value: String) {
+        editor.putString(LOGIN_ID, value).apply()
+    }
+
+    fun getLoginId(): String? {
+        return loginPreferences.getString(LOGIN_ID, "")
+    }*/
+
+    var autoLogin: Boolean
+        get() = loginPreferences.getBoolean(AUTO_LOGIN, false)
+        set(value) = editor.putBoolean(AUTO_LOGIN, value).apply()
+
+    var onBoarding : Boolean
+        get() = loginPreferences.getBoolean(ONBOARDING, false)
+        set(value) = editor.putBoolean(ONBOARDING, value).apply()
+
+    var loginId : String?
+        get() = loginPreferences.getString(LOGIN_ID, "")
+        set(value) = editor.putString(LOGIN_ID, value).apply()
+
+    fun setLogout() {
+        editor.remove(AUTO_LOGIN).apply()
+    }
+
+    fun clear(){
+        editor.clear().apply()
     }
 }

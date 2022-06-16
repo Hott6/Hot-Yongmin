@@ -1,5 +1,6 @@
 package thesopt.assignment.hot_yongmin.presentation.ui.main.profile
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import thesopt.assignment.hot_yongmin.R
 import thesopt.assignment.hot_yongmin.databinding.FragmentProfileBinding
+import thesopt.assignment.hot_yongmin.presentation.ui.auth.SettingActivity
 
 class ProfileFragment : Fragment() {
     private var _binding : FragmentProfileBinding? = null
@@ -22,12 +24,20 @@ class ProfileFragment : Fragment() {
         _binding= FragmentProfileBinding.inflate(layoutInflater)
         initImage()
         initTransactionEvent()
+        clickSetting()
         return binding.root
     }
 
     private fun initImage(){
         Glide.with(this).load(R.drawable.profile_emoji)
             .circleCrop().into(binding.ivProfile)
+    }
+
+    private fun clickSetting(){
+        binding.ivSetting.setOnClickListener{
+            val intent = Intent(requireContext(), SettingActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initTransactionEvent(){

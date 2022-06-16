@@ -25,40 +25,41 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    private fun setImageSize(){
+    private fun setImageSize() {
         val display = this.resources.displayMetrics
         val deviceWidth = display.widthPixels
-        val ratio : Double = 100/360.0
-        val imagePadding : Int = (ratio * deviceWidth).toInt()
+        val ratio: Double = 100 / 360.0
+        val imagePadding: Int = (ratio * deviceWidth).toInt()
         binding.imageView.setPadding(imagePadding, 0, imagePadding, 0)
     }
 
-    private fun checkOnboarding(){
-        if(GithubSharedPreferences.getOnboarding()){
+    private fun checkOnboarding() {
+        if(GithubSharedPreferences.onBoarding){
+        //if (GithubSharedPreferences.getOnboarding()) {
             checkAutoLogin()
-        }
-        else{
+        } else {
             val intent = Intent(this, OnboardingActivity::class.java)
             startActivity(intent)
         }
     }
 
-    private fun checkAutoLogin(){
-        if(GithubSharedPreferences.getAutoLogin()){
+    private fun checkAutoLogin() {
+        if(GithubSharedPreferences.autoLogin){
+        //if (GithubSharedPreferences.getAutoLogin()) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-        }
-        else{
+        } else {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
     }
 
-    private fun setDelay(){
+    private fun setDelay() {
         Handler(Looper.getMainLooper()).postDelayed({
-            val fadeAnim : Animation = AnimationUtils.loadAnimation(this, R.anim.splash_animation)
+            val fadeAnim: Animation = AnimationUtils.loadAnimation(this, R.anim.splash_animation)
             binding.imageView.startAnimation(fadeAnim)
             checkOnboarding()
+            finish()
         }, 1500L)
     }
 }
