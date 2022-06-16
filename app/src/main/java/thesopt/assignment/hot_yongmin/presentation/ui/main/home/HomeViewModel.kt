@@ -1,6 +1,7 @@
 package thesopt.assignment.hot_yongmin.presentation.ui.main.home
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import retrofit2.Call
@@ -11,19 +12,29 @@ import thesopt.assignment.hot_yongmin.presentation.util.enqueueUtil
 
 class HomeViewModel : ViewModel() {
 
-    val followersData = MutableLiveData<List<ResponseGithubFollowers>>()
+    private var _followersData = MutableLiveData<List<ResponseGithubFollowers>>()
+    val followersData: LiveData<List<ResponseGithubFollowers>> get() = _followersData
+
+    private var _followingData = MutableLiveData<List<ResponseGithubFollowers>>()
+    val followingData: LiveData<List<ResponseGithubFollowers>> get() = _followingData
+
     private val id = GithubSharedPreferences.loginId ?: ""
 
-    fun initNetwork() {
+    fun initFollowersNetwork() {
         val call: Call<List<ResponseGithubFollowers>> =
             ServiceCreator.githubService.getGithubFollowers(id)
         call.enqueueUtil(
-            onSuccess = {
-                followersData.value = it
-            },
-            onError = {
-                Log.d("server", "오류")
-            }
+            onSuccess = { _followersData.value = it },
+            onError = { Log.d("server", "오류") }
+        )
+    }
+
+    fun initFollowingNetwork() {
+        val call: Call<List<ResponseGithubFollowers>> =
+            ServiceCreator.githubService.getGithubFollowing(id)
+        call.enqueueUtil(
+            onSuccess = { _followingData.value = it },
+            onError = { Log.d("server", "오류") }
         )
     }
 }
