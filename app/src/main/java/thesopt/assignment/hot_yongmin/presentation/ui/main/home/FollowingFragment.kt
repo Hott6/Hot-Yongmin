@@ -9,22 +9,22 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import thesopt.assignment.hot_yongmin.R
-import thesopt.assignment.hot_yongmin.databinding.FragmentFollowersBinding
+import thesopt.assignment.hot_yongmin.databinding.FragmentFollowingBinding
 import thesopt.assignment.hot_yongmin.presentation.ui.main.profile.HorizontalItemDecoration
 import thesopt.assignment.hot_yongmin.presentation.ui.main.profile.VerticalItemDecoration
 
-class FollowersFragment : Fragment() {
-    private var _binding: FragmentFollowersBinding? = null
+class FollowingFragment : Fragment() {
+    private var _binding: FragmentFollowingBinding? = null
     private val binding get() = _binding ?: error("binding이 초기화 되지 않았습니다.")
-    private lateinit var followersAdapter: FollowersAdapter
     private val homeViewModel by viewModels<HomeViewModel>()
+    private lateinit var followingAdapter: FollowingAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentFollowersBinding.inflate(layoutInflater)
-        homeViewModel.initFollowersNetwork()
+        _binding = FragmentFollowingBinding.inflate(layoutInflater)
+        homeViewModel.initFollowingNetwork()
         return binding.root
     }
 
@@ -35,12 +35,12 @@ class FollowersFragment : Fragment() {
     }
 
     private fun initAdapter() {
-        followersAdapter = FollowersAdapter(itemClick = {
+        followingAdapter = FollowingAdapter(itemClick = {
             val address: Intent =
                 Uri.parse(it.profileLink).let { webpage -> Intent(Intent.ACTION_VIEW, webpage) }
             startActivity(address)
         })
-        binding.rvFollowers.adapter = followersAdapter
+        binding.rvFollowers.adapter = followingAdapter
         val sizeH = resources.getDimensionPixelSize(R.dimen.margin_24)
         val sizeV = resources.getDimensionPixelSize(R.dimen.margin_30)
         binding.rvFollowers.addItemDecoration(HorizontalItemDecoration(sizeH, 2))
@@ -48,8 +48,8 @@ class FollowersFragment : Fragment() {
     }
 
     private fun observeData() {
-        homeViewModel.followersData.observe(viewLifecycleOwner) {
-            followersAdapter.submitList(it)
+        homeViewModel.followingData.observe(viewLifecycleOwner) {
+            followingAdapter.submitList(it)
         }
     }
 }

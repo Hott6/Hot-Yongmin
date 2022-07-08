@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/iv_setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
@@ -28,25 +28,25 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
-            app:layout_constraintWidth_percent="0.222"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.222"
             app:srcCompat="@drawable/profile_emoji" />
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kwon Yongmin"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/noto_sans_kr_bold"
             android:includeFontPadding="false"
+            android:text="Kwon Yongmin"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintStart_toStartOf="@id/iv_profile"
             app:layout_constraintEnd_toEndOf="@id/iv_profile"
+            app:layout_constraintStart_toStartOf="@id/iv_profile"
             app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
 
         <TextView
@@ -54,12 +54,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="\@k_dragonm"
             android:includeFontPadding="false"
+            android:text="\@k_dragonm"
             android:textColor="@color/gray_DFDAED"
             android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/iv_profile"
             app:layout_constraintEnd_toEndOf="@id/iv_profile"
+            app:layout_constraintStart_toStartOf="@+id/iv_profile"
             app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
         <TextView
@@ -67,16 +67,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="공부가 맛있다"
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/noto_sans_kr_regular"
             android:includeFontPadding="false"
+            android:text="공부가 맛있다"
             android:textColor="@color/gray_8F8F8F"
             android:textSize="14sp"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintStart_toStartOf="@+id/iv_profile"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/iv_profile"
-            app:layout_constraintTop_toBottomOf="@+id/tv_age"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="@+id/iv_profile"
+            app:layout_constraintTop_toBottomOf="@+id/tv_age" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

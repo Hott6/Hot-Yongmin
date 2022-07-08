@@ -9,26 +9,23 @@ import com.bumptech.glide.Glide
 import thesopt.assignment.hot_yongmin.data.remote.data.entity.home.ResponseGithubFollowers
 import thesopt.assignment.hot_yongmin.databinding.ItemGithubFollowersBinding
 
-class FollowersAdapter(val itemClick: (ResponseGithubFollowers) -> Unit) :
-    ListAdapter<ResponseGithubFollowers, FollowersAdapter.FollowersViewHolder>(
-        FollowersComparator()
-    ) {
+class FollowingAdapter(val itemClick: (ResponseGithubFollowers) -> Unit) :
+    ListAdapter<ResponseGithubFollowers, FollowingAdapter.FollowingViewHolder>(FollowingComparator()) {
 
-    class FollowersViewHolder(
+    class FollowingViewHolder(
         private val binding: ItemGithubFollowersBinding,
         private val itemClick: (ResponseGithubFollowers) -> Unit
-    ) :
-        RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ResponseGithubFollowers) {
             binding.followersData = data
             Glide.with(binding.ivProfile.context).load(data.profileImage).into(binding.ivProfile)
-            binding.root.setOnClickListener {
+            itemView.setOnClickListener {
                 itemClick(data)
             }
         }
     }
 
-    private class FollowersComparator : DiffUtil.ItemCallback<ResponseGithubFollowers>() {
+    class FollowingComparator() : DiffUtil.ItemCallback<ResponseGithubFollowers>() {
         override fun areItemsTheSame(
             oldItem: ResponseGithubFollowers,
             newItem: ResponseGithubFollowers
@@ -45,13 +42,13 @@ class FollowersAdapter(val itemClick: (ResponseGithubFollowers) -> Unit) :
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FollowersViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = ItemGithubFollowersBinding.inflate(layoutInflater, parent, false)
-        return FollowersViewHolder(binding, itemClick)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FollowingViewHolder {
+        val binding =
+            ItemGithubFollowersBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return FollowingViewHolder(binding, itemClick)
     }
 
-    override fun onBindViewHolder(holder: FollowersViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FollowingViewHolder, position: Int) {
         return holder.onBind(getItem(position))
     }
 }
